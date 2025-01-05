@@ -17,7 +17,7 @@ import { useState } from 'react'
 import { useConvex } from 'convex/react'
 import { api } from '@/convex/_generated/api'
 import { useAuth } from '@/context/authContext'
-import { useNavigation, useRouter } from 'expo-router'
+import { useRouter } from 'expo-router'
 import { isEmail } from '@/lib/utils'
 
 export default function SignInForm() {
