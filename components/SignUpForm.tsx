@@ -231,12 +231,10 @@ export default function SignUpForm() {
 				onPress={form.handleSubmit(onSubmit)}
 			/>
 			<View style={styles.linkWrapper}>
-				<ThemedText>
-					Already Have a Account ?
-					<Link style={styles.link} href='/signIn'>
-						Sign In
-					</Link>
-				</ThemedText>
+				<Text style={styles.text}>Already Have a Account ?</Text>
+				<Link style={styles.link} href='/signIn'>
+					Sign In
+				</Link>
 			</View>
 		</View>
 	)
@@ -255,9 +253,17 @@ function useStyles() {
 			flexDirection: 'row',
 			justifyContent: 'center',
 			alignItems: 'center',
+			gap: 8,
+		},
+		text: {
+			color: theme.colors.primary,
+			fontSize: 16,
+			fontWeight: 'bold',
 		},
 		link: {
 			color: 'skyblue',
+			fontSize: 16,
+			fontWeight: 'bold',
 		},
 
 		checkBoxWrapper: {

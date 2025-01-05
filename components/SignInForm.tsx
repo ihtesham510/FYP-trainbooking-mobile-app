@@ -118,7 +118,7 @@ function SignInWithUserNameOrEmail() {
 					password: values.password,
 				})
 			}
-			router.navigate('/dashboard')
+			router.navigate('/dashboard/(tab)/trains')
 		} catch (err) {
 			console.log('Error while signing in', err)
 		}
@@ -176,8 +176,9 @@ function SignInWithUserNameOrEmail() {
 				)}
 			/>
 			<ThemedButton
-				title='Submit'
+				title={form.formState.isSubmitting ? 'Loading ...' : 'Submit'}
 				style={styles.button}
+				disabled={form.formState.isSubmitting}
 				onPress={form.handleSubmit(onSubmit)}
 			/>
 		</View>
@@ -233,7 +234,7 @@ function SignInWithPhoneNoForm() {
 				phone: values.phoneNo,
 				password: values.password,
 			})
-			router.navigate('/dashboard')
+			router.navigate('/dashboard/(tab)/trains')
 		} catch (err) {
 			console.log('Error while signing in', err)
 		}
@@ -289,8 +290,9 @@ function SignInWithPhoneNoForm() {
 				)}
 			/>
 			<ThemedButton
-				title='Submit'
+				title={form.formState.isSubmitting ? 'Loading ...' : 'Submit'}
 				style={styles.button}
+				disabled={form.formState.isSubmitting}
 				onPress={form.handleSubmit(onSubmit)}
 			/>
 		</View>
