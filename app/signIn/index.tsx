@@ -1,8 +1,18 @@
 import SignInForm from '@/components/SignInForm'
+import { useAuth } from '@/context/authContext'
 import { useTheme } from '@/context/themeContext'
+import { useRouter } from 'expo-router'
+import { useEffect } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 
 export default function SignUp() {
+	const { user } = useAuth()
+	const router = useRouter()
+	useEffect(() => {
+		if (user) {
+			router.navigate('/dashboard/(tab)/trains')
+		}
+	}, [user])
 	const { theme } = useTheme()
 	const styles = StyleSheet.create({
 		container: {

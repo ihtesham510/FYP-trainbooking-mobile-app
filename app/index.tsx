@@ -11,7 +11,7 @@ export default function Index() {
 	const { user } = useAuth()
 	useEffect(() => {
 		if (user) {
-			router.navigate('/dashboard')
+			router.navigate('/dashboard/(tab)/trains')
 		}
 	}, [user, router])
 	return (
@@ -59,7 +59,7 @@ export default function Index() {
 				</View>
 
 				<Link
-					href={user ? '/dashboard' : '/signUp'}
+					href={user ? '/dashboard/(tab)/trains' : '/signUp'}
 					style={{
 						backgroundColor: 'white',
 						marginHorizontal: '10%',
